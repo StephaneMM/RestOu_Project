@@ -1,0 +1,14 @@
+<form method="post" action="/auth/signin" class="form">
+    {{> flashMessage}}
+
+    <label for="email">email</label>
+    <input class="input" type="email" id="email" name="email">
+    <label for="password">password</label>
+    <input class="input" type="password" id="password" name="password"></input>
+    <button class="btn">Sign in</button>
+
+</form>
+
+<p>
+    Don't have an account yet ? <a href="/auth/signup">Sign up & enjoy amazing features</a>
+</p>
