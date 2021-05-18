@@ -22,6 +22,9 @@ app.use(
   })
 );
 
+
+
+
 //router.use(protectAdminRoute); //laissé en commentaire pour ne pas avoir a se co en tant qu'admin
 
 

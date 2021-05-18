@@ -1,12 +1,15 @@
 <div class="container">
-  <h1>HELLO</h1>
-  <form method="get" action="/restaurants" >
-  <div class="input-group">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-      aria-describedby="search-addon" />
-    <button type="button" class="btn btn-outline-primary">search</button>
-  </div>
-  </form>
+
+
+
+    <form class="search" action="/restaurants" method="GET">
+        <input class="bar" type="text" placeholder="Search by department..." name="resName">
+        <button><i class="fas fa-search"></i>SEARCH</button>
+        <button><a href="/restaurants"><i class="fas fa-sync-alt"></i>REFREH</a></button>
+    </form>
+
+
+
 
   {{! just a quick config with the CSS from artistify to have a quick visual feedback }}
   {{! Copied CSS in public/stylesheets/home.index }}

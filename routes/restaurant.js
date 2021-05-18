@@ -18,13 +18,22 @@ const options = {
 
 const geocoder = NodeGeocoder(options);
 
+router.get('/', function(req, res, next) {
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  RestaurantModel.find()
-  .then((dbResult) => 
-  res.render("index.hbs",{restaurant:dbResult}))
+  if(!req.query.resName) {
+
+    RestaurantModel.find()
+    .then((dbResult) => 
+    res.render("index.hbs",{restaurant:dbResult}))
+
+  }  else {
+
+    Restaurant.find({department: req.query.resName}).then((dbResult) => 
+    res.render("index.hbs",{restaurant:dbResult}))
+  }
+
 });
+
 
 
 router.get("/new",protectAdminRoute, async (req, res, next) => {
