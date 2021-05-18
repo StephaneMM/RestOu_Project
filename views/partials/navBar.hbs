@@ -1,25 +1,25 @@
-<header id="header-main">
-  <span id="logo-main">
+<header class="navContainer">
+  <div class="logo">
     <a href="/"> REST'OÙ </a>
-  </span>
+  </div>
   <nav>
     <a href="/" class="link">home</a>
     |
-    <a href="/restorant" class="link">Restorant</a>
+    <a href="/restaurant" class="link">Restaurant</a>
     {{#unless isLoggedIn}}
-      <a class="link" href="/auth/signin">signin</a>
+      <a class="link" href="/auth/signin"><i class="fas fa-user fa-1x"></i> signin</a>
       <a class="link" href="/auth/signup">signup</a>
     {{/unless}}
     {{#if isLoggedIn}}
       <a class="link" href="/restaurants/new"><i
-          class="fa fa-plus"
+          class="fas fa-plus"
           aria-hidden="true"
         ></i></a>
 
       <a class="link" href="/restaurants/favoris">|
-        <i class="fa fa-heart" aria-hidden="true"></i></a>
+        <i class="fas fa-heart" aria-hidden="true"></i></a>
       {{#each user}}
-        <a class="link" href="/user/profil"><i class="fa fa-user fa-1x"></i>
+        <a class="link" href="/user/profil"><i class="fas fa-user fa-1x"></i>
           |
           {{this.firstName}}</a>
       {{/each}}
