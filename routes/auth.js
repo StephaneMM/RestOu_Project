@@ -8,11 +8,11 @@ const protectRoute = require("./../middlewares/protectRoute");
 const protectAdminRoute = require("./../middlewares/protectAdminRoute");
 
 router.get("/signin", (req, res, next) => {
-    res.render("./../views/auth/signin.hbs");
+    res.render("auth/signin.hbs");
 });
 
 router.get("/signup", (req, res, next) => {
-    res.render("./../views/auth/signup.hbs");
+    res.render("auth/signup.hbs");
 });
 
 router.post("/signin", async (req, res, next) => {
