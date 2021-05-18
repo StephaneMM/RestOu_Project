@@ -1,27 +1,37 @@
-<h1>HELLO</h1>
-
-
-{{! just a quick config with the CSS from artistify to have a quick visual feedback }}
-{{! Copied CSS in public/stylesheets/home.index }}
-
-<div class="mainContainer">
-  <div class="cards">
-    {{#each restaurant}}
-      <a href="/restaurants/{{this._id}}">
-        <div class="card album" style="background-image: url({{this.picture}}">
-          <p>
-            {{this.name}}<br>
-            {{this.stars}}<br>
-            {{this.address}}<br>
-            {{this.cuisineType}}
-          </p>
-        </div>
-      </a>
-    {{/each}}
+<div class="container">
+  <h1>HELLO</h1>
+  <form method="get" action="/restaurants" >
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">search</button>
   </div>
+  </form>
 
-  <aside class="mapContainer">
+  {{! just a quick config with the CSS from artistify to have a quick visual feedback }}
+  {{! Copied CSS in public/stylesheets/home.index }}
 
-  </aside>
+  <div class="mainContainer">
+    <div class="d-flex flex-wrap">
+      {{#each restaurant}}
+    
+      <div class="card m-3 album" style="background-image: url({{this.picture}}">
+        <a href="/restaurants/{{this._id}}" class="black" >
+            <p class="black">
+              {{this.name}}<br>
+              {{this.stars}}<br>
+              {{this.address}}<br>
+              {{this.cuisineType}}
+            </p>
+        
+        </a>
+        </div>
+      {{/each}}
+    </div>
 
+    <aside class="mapContainer">
+
+    </aside>
+
+  </div>
 </div>
