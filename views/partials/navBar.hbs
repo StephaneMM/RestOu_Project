@@ -1,0 +1,29 @@
+<header id="header-main">
+  <span id="logo-main">
+    <a href="/"> REST'OÙ </a>
+  </span>
+  <nav>
+    <a href="/" class="link">home</a>
+    |
+    <a href="/restorant" class="link">Restorant</a>
+    {{#unless isLoggedIn}}
+      <a class="link" href="/auth/signin">signin</a>
+      <a class="link" href="/auth/signup">signup</a>
+    {{/unless}}
+    {{#if isLoggedIn}}
+      <a class="link" href="/restaurants/new"><i
+          class="fa fa-plus"
+          aria-hidden="true"
+        ></i></a>
+
+      <a class="link" href="/restaurants/favoris">|
+        <i class="fa fa-heart" aria-hidden="true"></i></a>
+      {{#each user}}
+        <a class="link" href="/user/profil"><i class="fa fa-user fa-1x"></i>
+          |
+          {{this.firstName}}</a>
+      {{/each}}
+      <a class="link" href="/auth/signout">signout</a>
+    {{/if}}
+  </nav>
+</header>
