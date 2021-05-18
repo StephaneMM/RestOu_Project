@@ -6,11 +6,28 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const NodeGeocoder = require('node-geocoder');
+const session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var restaurantRouter = require('./routes/restaurant');
 var app = express();
+
+// INITIALIZE SESSION
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+
+//router.use(protectAdminRoute); //laissé en commentaire pour ne pas avoir a se co en tant qu'admin
+
+
+// expose login status to the hbs templates
+app.use(require("./middlewares/exposeLoginStatus"));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
