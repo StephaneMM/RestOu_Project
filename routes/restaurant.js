@@ -33,13 +33,15 @@ router.get("/new",protectAdminRoute, async (req, res, next) => {
 
 router.post('/create',protectAdminRoute, uploader.single('picture'), (req, res) => {
   let markers = []
+  let department = ""
   geocoder.geocode(req.body.address).then((response) => {
+
   const { name, address, minPrice, maxPrice, cuisineType, description, stars, standing, greenTouch, openingHours, phoneNumber, website } = req.body;
   markers.push(response[0].latitude, response[0].longitude)
-
+  department = response[0].administrativeLevels.level1long
   const filePath = !req.file ? undefined : req.file.path
 
-  Restaurant.create({ name, address, minPrice, maxPrice, cuisineType, description, stars, standing, greenTouch, openingHours, phoneNumber, website, coordinates: markers, picture: filePath })
+  Restaurant.create({ name, address, minPrice, maxPrice, cuisineType, description, stars, standing, greenTouch, openingHours, phoneNumber, website, coordinates: markers, department, picture: filePath })
     .then((response) => {
       console.log(response)
       res.redirect('/')
