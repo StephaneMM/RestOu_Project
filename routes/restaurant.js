@@ -3,6 +3,9 @@ var router = express.Router();
 const Restaurant = require("./../models/Restaurant");
 const uploader = require('../configs/cloudinary.config');
 const NodeGeocoder = require('node-geocoder');
+const RestaurantModel = require('./../models/Restaurant');
+const protectRoute = require("./../middlewares/protectRoute");
+const protectAdminRoute = require("./../middlewares/protectAdminRoute");
 
 const options = {
   provider: 'google',
@@ -18,15 +21,17 @@ const geocoder = NodeGeocoder(options);
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('ok');
+  RestaurantModel.find()
+  .then((dbResult) => 
+  res.render("index.hbs",{restaurant:dbResult}))
 });
 
 
-router.get("/new", async (req, res, next) => {
+router.get("/new",protectAdminRoute, async (req, res, next) => {
   res.render("restaurants/new");
 });
 
-router.post('/create', uploader.single('picture'), (req, res) => {
+router.post('/create',protectAdminRoute, uploader.single('picture'), (req, res) => {
   let markers = []
   let department = ""
   geocoder.geocode(req.body.address).then((response) => {
