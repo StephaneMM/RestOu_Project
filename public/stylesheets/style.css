@@ -1,12 +1,25 @@
 @import "home.index.css";
 @import "navBar.css";
+/* Importing Google fonts */
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+/* Importing components */
+@import url("cards.css");
+@import url("search_bar.css");
+
 
 body {
-  padding: 50px;
+  margin: 0px !important;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.cursor-pointer{
+  cursor: pointer;
 }
 
+#big-map {
+  height: 100vh;
+  width: 70vw;
+  position: sticky !important;
+  top: 0;
+}

@@ -8,11 +8,14 @@ var logger = require('morgan');
 const NodeGeocoder = require('node-geocoder');
 const session = require("express-session");
 const hbs = require("hbs");
-
+const flash = require("connect-flash"); // designed to keep messages between 2 http request/response cycles
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var restaurantRouter = require('./routes/restaurant');
+var authRouter = require('./routes/auth');
 var app = express();
+
+
 
 // INITIALIZE SESSION
 app.use(
@@ -23,6 +26,9 @@ app.use(
   })
 );
 
+
+app.use(flash());
+app.use(require("./middlewares/exposeFlashMessage"));
 //router.use(protectAdminRoute); //laissé en commentaire pour ne pas avoir a se co en tant qu'admin
 
 
@@ -44,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/restaurants', restaurantRouter);
+app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

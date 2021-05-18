@@ -18,13 +18,22 @@ const options = {
 
 const geocoder = NodeGeocoder(options);
 
+router.get('/', function(req, res, next) {
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  RestaurantModel.find()
-  .then((dbResult) => 
-  res.render("index.hbs",{restaurant:dbResult}))
+  if(!req.query.resName) {
+
+    RestaurantModel.find()
+    .then((dbResult) => 
+    res.render("index.hbs",{restaurant:dbResult}))
+
+  }  else {
+
+    Restaurant.find({department: req.query.resName}).then((dbResult) => 
+    res.render("index.hbs",{restaurant:dbResult}))
+  }
+
 });
+
 
 
 router.get("/new",protectAdminRoute, async (req, res, next) => {
@@ -33,12 +42,11 @@ router.get("/new",protectAdminRoute, async (req, res, next) => {
 
 router.post('/create',protectAdminRoute, uploader.single('picture'), (req, res) => {
   let markers = []
-  let department = ""
   geocoder.geocode(req.body.address).then((response) => {
 
   const { name, address, minPrice, maxPrice, cuisineType, description, stars, standing, greenTouch, openingHours, phoneNumber, website } = req.body;
   markers.push(response[0].latitude, response[0].longitude)
-  department = response[0].administrativeLevels.level1long
+  let department = response[0].administrativeLevels.level1long
   const filePath = !req.file ? undefined : req.file.path
 
   Restaurant.create({ name, address, minPrice, maxPrice, cuisineType, description, stars, standing, greenTouch, openingHours, phoneNumber, website, coordinates: markers, department, picture: filePath })
