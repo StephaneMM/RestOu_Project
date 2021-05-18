@@ -1,1 +1,27 @@
 <h1>HELLO</h1>
+
+
+{{! just a quick config with the CSS from artistify to have a quick visual feedback }}
+{{! Copied CSS in public/stylesheets/home.index }}
+
+<div class="mainContainer">
+  <div class="cards">
+    {{#each restaurant}}
+      <a href="/restaurants/{{this._id}}">
+        <div class="card album" style="background-image: url({{this.picture}}">
+          <p>
+            {{this.name}}<br>
+            {{this.stars}}<br>
+            {{this.address}}<br>
+            {{this.cuisineType}}
+          </p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+
+  <aside class="mapContainer">
+
+  </aside>
+
+</div>
