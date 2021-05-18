@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const NodeGeocoder = require('node-geocoder');
 const session = require("express-session");
+const hbs = require("hbs");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
@@ -34,6 +35,7 @@ app.use(require("./middlewares/exposeLoginStatus"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
