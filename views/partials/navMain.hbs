@@ -1,0 +1,11 @@
+<nav id="nav-main">
+    <a href="/" title="homepage" class="link"><i class="fas fa-home fa-1x"></i></a>
+    <a href="/create" title="create" class="link"><i class="plus-icon"></i></a>
+    <a href="/favorite" title="favorite" class="link"><i class="fas fa-record-vinyl"></i></a>
+    <a href="/profile/:id" title="profile" class="link"><i class="profil-icon"></i></a>
+    {{#if signin}}
+    <a href="/signin" title="signout" class="link"><i class="signout"></i></a>
+    {{#if signout}}
+    <a href="/signin" title="signin" class="link"><i class="signin"></i></a>
+    <a href="/signup" title="signup" class="link"><i class="signup"></i></a>
+</nav>
