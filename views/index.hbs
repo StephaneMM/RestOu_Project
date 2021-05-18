@@ -1,40 +1,33 @@
-<div class="container">
-
-
-
+<div class="container mt-5 d-flex justify-content-center">
     <form class="search" action="/restaurants" method="GET">
         <input class="bar" type="text" placeholder="Search by department..." name="resName">
         <button><i class="fas fa-search"></i>SEARCH</button>
         <button><a href="/restaurants"><i class="fas fa-sync-alt"></i>REFREH</a></button>
     </form>
-
-
-
-
+</div>
   {{! just a quick config with the CSS from artistify to have a quick visual feedback }}
   {{! Copied CSS in public/stylesheets/home.index }}
 
-  <div class="mainContainer">
-    <div class="d-flex flex-wrap">
+  <div class="mt-5 d-flex">
+    <div class="cards">
       {{#each restaurant}}
     
-      <div class="card m-3 album" style="background-image: url({{this.picture}}">
+      <div class="card-restaurant card" data-name={{this.name}} data-coordinates={{this.coordinates}}  style="background-image: url({{this.picture}}">
+        <div class="w-100 d-flex align-items-center justify-content-between">
+          <p class="white mb-0">{{this.name}}</p>
+          <i class="favoris fas fa-heart cursor-pointer " style="color:white"></i>
+        </div>
         <a href="/restaurants/{{this._id}}" class="black" >
-            <p class="black">
-              {{this.name}}<br>
-              {{this.stars}}<br>
-              {{this.address}}<br>
-              {{this.cuisineType}}
-            </p>
-        
+          <p class="white">{{this.stars}}</p>
+          <p class="white"> {{this.address}}</p>
+          <p class="white">{{this.cuisineType}}</p>        
         </a>
         </div>
       {{/each}}
     </div>
 
-    <aside class="mapContainer">
-
-    </aside>
+    
+      <div id="big-map"></div>
+  
 
   </div>
-</div>
