@@ -39,6 +39,9 @@ let users = [
     password: '$2a$10$sbs8aj1Q1PrGKhMkkyGvSOeRCubDzCr1JlVkpgsGt3ys3nGn2fngK',
     address: '3 rue camille tahan Paris 75018',
     favoris: [],
+    createdAt: '2021-05-19T09:48:13.566+00:00',
+    updatedAt: '2021-05-19T09:48:13.566+00:00',
+    __v: 0,
     },
     {
         isAdmin: true,
@@ -48,5 +51,8 @@ let users = [
         password: '$2a$10$sbs8aj1Q1PrGKhMkkyGvSOeRCubDzCr1JlVkpgsGt3ys3nGn2fngK',
         address: '3 rue camille tahan Paris 75018',
         favoris: [],
+        createdAt: '2021-05-19T09:48:13.566+00:00',
+        updatedAt: '2021-05-19T09:48:13.566+00:00',
+        __v: 0,
         }
 ]
