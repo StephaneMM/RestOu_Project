@@ -20,32 +20,54 @@
 
 <main class="restauPage-container">
 
-<div class="restauPage-banner">
-      <div class="restauImg-div" width="300">
-    <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
-  </div>
-
-
-<div class="infos">
-    <h1> {{restaurant.name}} </h1> <br> 
-    <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br> <br>
-    <p>{{restaurant.address}}</p> <br>
-    <p>$$$: [{{restaurant.minPrice}} - {{restaurant.maxPrice}}]</p> <br>
-    <p>{{restaurant.standing}}</p> <br>
-    <p>{{restaurant.cuisineType}}</p> <br>
-</div>
+<div class="restauPage-unscrollable">
+    <div class="restauImg-div" width="300">
+      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    </div>
+    <div class="restau-map" width="300">
+      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    </div>
 </div>
 
+  <div class="infos-scrollable">
 
-  <div class="descr-div">
-    <h2>Description
-    </h2>
-    <p>{{restaurant.picture}}</p>
+    <div class="info-section-1">
+      <h1> {{restaurant.name}} </h1> <br> 
+      <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
+      <p>{{restaurant.address}}</p> <br>  
+    </div>
+
+    <div class="info-section-2">
+      <p>$$$: [{{restaurant.minPrice}} - {{restaurant.maxPrice}}]</p> <br>
+      <p>{{restaurant.standing}}</p> <br>
+      <p>{{restaurant.cuisineType}}</p> <br>
+    </div>
+
+    <div class="info-section-description">
+      <h2>Description</h2>
+      <p>{{restaurant.description}}</p>
+    </div>
+
+    <div class="info-section-contact">
+      <h2>Eager to book a table ?</h2>
+      <p>{{restaurant.website}}</p>
+      <p>{{restaurant.phoneNumber}}</p>
+      <p>{{restaurant.openingHours}}</p>
+    </div>
+
+    <div class="info-section-review">
+      <div class="display-review">
+        <h2>Reviews</h2>
+        {{#each review.restaurantId}}
+          <p>{{this.userId}}</p>
+          <p>{{this.note}}</p>
+          <p>{{this.comment}}</p>
+        {{/each}}
+      </div>
+      <div class="new-review-box">
+        {{> reviewFromPartial }}
+      </div>
+    </div>
   </div>
 
-  <div class="comments-div">
-      {{#each review}}
-{{this}}
-{{/each}}
-  </div>
 </main>
