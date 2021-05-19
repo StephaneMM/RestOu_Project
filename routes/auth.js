@@ -4,7 +4,7 @@ const RestaurantModel = require("./../models/Restaurant");
 
 const ReviewModel = require("./../models/Review");
 const UserModel = require("./../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin.hbs");
@@ -22,7 +22,7 @@ router.post("/signin", async (req, res, next) => {
     console.log(foundUser);
     if(!foundUser) {
         req.flash("error", "Invalid credentials");
-        res.redirect("/auth/sigin");
+        res.redirect("/auth/signin");
     } else {
         const isSamePassword = bcrypt.compareSync(password, foundUser.password);
 

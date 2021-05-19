@@ -1,0 +1,41 @@
+
+section{
+    padding: O 18px;
+    width: auto;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: auto 5%;
+}
+
+.home>*{
+    margin: 0 5px;
+}
+
+.home-p, .title{
+    padding: 20px 0px;
+}
+
+.title-txt {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: left;
+}
+.bg{
+    background-color: #f8fafc;
+}
+
+.home-div img{
+    width: 400px;
+}
+
+.job-title{
+    color: #dc3545;
+    font-weight: bold;
+}

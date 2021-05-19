@@ -1,0 +1,73 @@
+{{! name: String,
+    address: String,
+    minPrice: Number,
+    maxPrice: Number,
+    cuisineType: String,
+    description: String,
+    stars: String,
+    standing: String,
+    greenTouch: String,
+    openingHours: String,
+    phoneNumber: String,
+    website: String,
+    coordinates: Array,
+    department: String,
+    picture: {
+      type: String,
+      default:
+        "https://d3h1lg3ksw6i6b.cloudfront.net/guide/placeholder/pic_poilist_default_1.jpg",
+    }, }}
+
+<main class="restauPage-container">
+
+<div class="restauPage-unscrollable">
+    <div class="restauImg-div" width="300">
+      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    </div>
+    <div class="restau-map" width="300">
+      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    </div>
+</div>
+
+  <div class="infos-scrollable">
+
+    <div class="info-section-1">
+      <h1> {{restaurant.name}} </h1> <br> 
+      <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
+      <p>{{restaurant.address}}</p> <br>  
+    </div>
+
+    <div class="info-section-2">
+      <p>$$$: [{{restaurant.minPrice}} - {{restaurant.maxPrice}}]</p> <br>
+      <p>{{restaurant.standing}}</p> <br>
+      <p>{{restaurant.cuisineType}}</p> <br>
+    </div>
+
+    <div class="info-section-description">
+      <h2>Description</h2>
+      <p>{{restaurant.description}}</p>
+    </div>
+
+    <div class="info-section-contact">
+      <h2>Eager to book a table ?</h2>
+      <p>{{restaurant.website}}</p>
+      <p>{{restaurant.phoneNumber}}</p>
+      <p>{{restaurant.openingHours}}</p>
+    </div>
+
+    <div class="info-section-review">
+      <div class="display-review">
+        <h2>Reviews</h2>
+        {{#each review.restaurantId}}
+          <p>{{this.userId}}</p>
+          <p>{{this.note}}</p>
+          <p>{{this.comment}}</p>
+        {{/each}}
+      </div>
+      <div class="new-review-box">
+
+      </div>
+    </div>
+  </div>
+
+</main>

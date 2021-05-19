@@ -1,9 +1,13 @@
+@import "index.home.css";
+@import "navBar.css";
 /* Importing Google fonts */
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 
 /* Importing components */
 @import url("cards.css");
 @import url("search_bar.css");
+@import url("restaurant.css");
+@import url("footer.css");
 
 
 body {
@@ -21,6 +25,7 @@ body {
   position: sticky !important;
   top: 0;
 }
+
 
 .gm-style-iw-d {
   width: 200px !important

@@ -1,0 +1,21 @@
+.restauPage-container {
+    height: 60%;
+}
+
+.restauPage-unscrollable, .infos-scrollable {
+    width: 50px;
+}
+
+.restauPage-unscrollable {
+    position: fixed;
+    left: 0;
+    left: 50%;
+    width: 4em;
+    margin: 1em;
+    overflow-y: scroll;
+}
+
+.infos-scrollable {
+    margin-left: 50%;
+    overflow: auto;
+}
