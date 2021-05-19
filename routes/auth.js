@@ -22,7 +22,7 @@ router.post("/signin", async (req, res, next) => {
     console.log(foundUser);
     if(!foundUser) {
         req.flash("error", "Invalid credentials");
-        res.redirect("/auth/sigin");
+        res.redirect("/auth/signin");
     } else {
         const isSamePassword = bcrypt.compareSync(password, foundUser.password);
         console.log(isSamePassword);
