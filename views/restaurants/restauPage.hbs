@@ -1,0 +1,51 @@
+{{! name: String,
+    address: String,
+    minPrice: Number,
+    maxPrice: Number,
+    cuisineType: String,
+    description: String,
+    stars: String,
+    standing: String,
+    greenTouch: String,
+    openingHours: String,
+    phoneNumber: String,
+    website: String,
+    coordinates: Array,
+    department: String,
+    picture: {
+      type: String,
+      default:
+        "https://d3h1lg3ksw6i6b.cloudfront.net/guide/placeholder/pic_poilist_default_1.jpg",
+    }, }}
+
+<main class="restauPage-container">
+
+<div class="restauPage-banner">
+      <div class="restauImg-div" width="300">
+    <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+  </div>
+
+
+<div class="infos">
+    <h1> {{restaurant.name}} </h1> <br> 
+    <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br> <br>
+    <p>{{restaurant.address}}</p> <br>
+    <p>$$$: [{{restaurant.minPrice}} - {{restaurant.maxPrice}}]</p> <br>
+    <p>{{restaurant.standing}}</p> <br>
+    <p>{{restaurant.cuisineType}}</p> <br>
+</div>
+</div>
+
+
+  <div class="descr-div">
+    <h2>Description
+    </h2>
+    <p>{{restaurant.picture}}</p>
+  </div>
+
+  <div class="comments-div">
+      {{#each review}}
+{{this}}
+{{/each}}
+  </div>
+</main>
