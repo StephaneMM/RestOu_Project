@@ -21,5 +21,12 @@ let reviews = [
         restaurantId: '60a51247d04dac5cac21a614',
         note: 4,
         comment: "Très bon restaurant, mérite une étoile"
-    }
+    },
+    {
+        userId: '60a4dedd68a7e813805e9403',
+        restaurantId: '60a51247d04dac5cac21a614',
+        note: 4,
+        comment: "Très bon restaurant, mérite une étoile"
+    },
+    
 ]
