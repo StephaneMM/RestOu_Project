@@ -1,0 +1,22 @@
+<div class="container mt-5 d-flex justify-content-center"></div>
+<h1 class="text-center">Your wish-list</h1>
+    <div class="mt-5 d-flex">
+        <div class="cards">
+            {{#each favoris}}
+                <div class="card-restaurant card" style="background-image: url({{this.picture}}">
+                    <a href="/restaurants/{{this._id}}" class="black" >
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                            <p class="white mb-0">{{this.name}}</p>  
+                        </div>
+                        <p class="white">{{this.stars}}</p>
+                        <p class="white"> {{this.address}}</p>
+                        <p class="white">{{this.cuisineType}}</p>        
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+
+
+</div>

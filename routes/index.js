@@ -8,4 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/api/users', function(req, res, next) {
+  console.log("SUCCESSSSSS")
+});
 module.exports = router;

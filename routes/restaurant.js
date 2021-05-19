@@ -20,16 +20,24 @@ const geocoder = NodeGeocoder(options);
 
 router.get('/', function(req, res, next) {
 
+  
   if(!req.query.resName) {
 
     RestaurantModel.find()
     .then((dbResult) => 
-    res.render("index.hbs",{restaurant:dbResult}))
+    res.render("index.hbs",{ 
+      restaurant:dbResult, 
+      user_id: req.session.currentUser === undefined ? null : req.session.currentUser._id,
+      favoris: req.session.currentUser === undefined ? null : req.session.currentUser.favoris }))
 
   }  else {
 
     Restaurant.find({department: req.query.resName}).then((dbResult) => 
-    res.render("index.hbs",{restaurant:dbResult}))
+    res.render("index.hbs",{
+      restaurant:dbResult, 
+      user_id: req.session.currentUser === undefined ? null : req.session.currentUser._id,
+      favoris: req.session.currentUser === undefined ? null : req.session.currentUser.favoris
+    }))
   }
 
 });
@@ -55,7 +63,7 @@ router.post('/create',protectAdminRoute, uploader.single('picture'), (req, res) 
       res.redirect('/')
     })
     .catch(error => console.log(`Error while creating a new restou: ${error}`));
-});
+  });
 });
 
 
