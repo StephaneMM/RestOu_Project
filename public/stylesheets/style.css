@@ -7,6 +7,7 @@
 @import url("cards.css");
 @import url("search_bar.css");
 @import url("restaurant.css");
+@import url("footer.css");
 
 
 body {
@@ -23,4 +24,9 @@ body {
   width: 70vw;
   position: sticky !important;
   top: 0;
+}
+
+
+.gm-style-iw-d {
+  width: 200px !important
 }

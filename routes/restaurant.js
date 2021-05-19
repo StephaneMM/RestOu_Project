@@ -19,15 +19,28 @@ const options = {
 
 const geocoder = NodeGeocoder(options);
 
-router.get("/", function (req, res, next) {
-  if (!req.query.resName) {
-    RestaurantModel.find().then((dbResult) =>
-      res.render("index.hbs", { restaurant: dbResult })
-    );
-  } else {
-    Restaurant.find({ department: req.query.resName }).then((dbResult) =>
-      res.render("index.hbs", { restaurant: dbResult })
-    );
+
+router.get('/', function(req, res, next) {
+
+  
+  if(!req.query.resName) {
+
+    RestaurantModel.find()
+    .then((dbResult) => 
+    res.render("index.hbs",{ 
+      restaurant:dbResult, 
+      user_id: req.session.currentUser === undefined ? null : req.session.currentUser._id,
+      favoris: req.session.currentUser === undefined ? null : req.session.currentUser.favoris }))
+
+  }  else {
+
+    Restaurant.find({department: req.query.resName}).then((dbResult) => 
+    res.render("index.hbs",{
+      restaurant:dbResult, 
+      user_id: req.session.currentUser === undefined ? null : req.session.currentUser._id,
+      favoris: req.session.currentUser === undefined ? null : req.session.currentUser.favoris
+    }))
+
   }
 });
 
@@ -93,8 +106,8 @@ router.get("/:id", (req, res, next) => {
     .then((restaurant) => {
       ReviewModel.find({ restaurantId: req.params.id })
       .then((review) => {
-        review.populate("userId")
-        .then(() => res.render("restauPage", { restaurant: restaurant, reviews: reviews }))
+        
+        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review })
       });
     })
     .catch((dbErr) => {
