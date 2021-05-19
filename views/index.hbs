@@ -1,3 +1,9 @@
+
+
+
+
+
+
   <section class="home bg">
         <span class="title-txt">
             <h1 class="title">Looking for a high end restaurant near your location ?</h1>
@@ -10,6 +16,7 @@
     </section>
     
   <div class="container mt-5 d-flex justify-content-center">
+
     <form class="search" action="/restaurants" method="GET">
         <input class="bar" type="text" placeholder="Search by department..." name="resName">
         <button><i class="fas fa-search"></i>SEARCH</button>
@@ -24,14 +31,17 @@
 
   <div class="mt-5 d-flex">
     <div class="cards">
+    
+        <h1 id="user_id" style="display: none;">{{user_id}}</h1>
+        <h1 id="favoris" style="display: none;">{{favoris}}</h1>
+    
       {{#each restaurant}}
     
       <div class="card-restaurant card" data-name={{this.name}} data-coordinates={{this.coordinates}}  style="background-image: url({{this.picture}}">
-        <div class="w-100 d-flex align-items-center justify-content-between">
-          <p class="white mb-0">{{this.name}}</p>
-          <i class="favoris fas fa-heart cursor-pointer " style="color:white"></i>
-        </div>
         <a href="/restaurants/{{this._id}}" class="black" >
+        <div class="w-100 d-flex align-items-center justify-content-between">
+          <p class="white mb-0">{{this.name}}</p>    
+        </div>
           <p class="white">{{this.stars}}</p>
           <p class="white"> {{this.address}}</p>
           <p class="white">{{this.cuisineType}}</p>        
@@ -44,4 +54,4 @@
       <div id="big-map"></div>
   
 
-  </div>
+

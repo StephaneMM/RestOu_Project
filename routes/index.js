@@ -5,7 +5,8 @@ const protectAdminRoute = require("./../middlewares/protectAdminRoute");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/restaurants');
 });
+
 
 module.exports = router;
