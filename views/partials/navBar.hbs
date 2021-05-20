@@ -8,14 +8,17 @@
     <!--<a href="/" class="link">Restaurant</a>-->
 
     {{#unless isLoggedIn}}
-      <a class="link" href="/auth/signin"><i class="fas fa-user fa-1x"></i> signin</a>
-      <a class="link" href="/auth/signup">signup</a>
+      <a class="link" href="/auth/signin"><i class="fas fa-user fa-1x"></i>
+        signin</a>
+      <a class="link" href="/auth/signup"><button>Sign up</button></a>
     {{/unless}}
     {{#if isLoggedIn}}
-      <a class="link" href="/restaurants/new"><i
-          class="fas fa-plus"
-          aria-hidden="true"
-        ></i></a>
+      {{#if currentUser.isAdmin}}
+        <a class="link" href="/restaurants/new"><i
+            class="fas fa-plus"
+            aria-hidden="true"
+          ></i></a>
+      {{/if}}
 
       <a class="link" href="/users/wish-list">|
         <i class="fas fa-heart" aria-hidden="true"></i></a>
@@ -24,7 +27,7 @@
           |
           {{this.firstName}}</a>
       {{/each}}
-      <a class="link" href="/auth/signout">signout</a>
+      <a class="btn" href="/auth/signout">Signout</a>
     {{/if}}
   </nav>
 </header>
