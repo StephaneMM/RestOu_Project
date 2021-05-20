@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+.banner-wish-list {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    height: 100vh;
+  }
+  
+  .banner-wish-list h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    font-family: larsseit, -apple-system, system-ui, BlinkMacSystemFont, SegoeUI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  }
