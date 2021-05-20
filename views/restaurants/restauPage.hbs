@@ -21,11 +21,11 @@
 <main class="restauPage-container">
 
 <div class="restauPage-unscrollable">
-    <div class="restauImg-div" width="300">
-      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    <div class="restauImg-div">
+      <img class="img-restaurant" src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
     </div>
-    <div class="restau-map" width="300">
-      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+    <div class="restau-map">
+      <img class="img-restaurant" src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
     </div>
 </div>
 
@@ -58,15 +58,16 @@
     <div class="info-section-review">
       <div class="display-review">
         <h2>Reviews</h2>
-        {{#each review.restaurantId}}
-          <p>{{this.userId}}</p>
+        {{#each reviews}}
+          <p>{{this.userId.firstName}} {{this.userId.lastName}}</p>
           <p>{{this.note}}</p>
           <p>{{this.comment}}</p>
         {{/each}}
       </div>
       <div class="new-review-box">
-
+        {{>reviewFormPartial}}
       </div>
+     {{>adminButton}}
     </div>
   </div>
 

@@ -100,19 +100,74 @@ router.post(
     });
   }
 );
-
+/*
 router.get("/:id", (req, res, next) => {
   RestaurantModel.findById(req.params.id)
     .then((restaurant) => {
       ReviewModel.find({ restaurantId: req.params.id })
-      .then((review) => {
-        
-        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review })
+      .then((review) => {  
+        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review });
+        //UserModel.find({ userId: req.params.id })
       });
     })
     .catch((dbErr) => {
       next(dbErr);
     });
 });
+*/
+
+router.get("/:id", (req, res, next) => {
+  RestaurantModel.findById(req.params.id)
+  .then((restaurant) => {
+      ReviewModel.find().populate("userId")/*.populate("restaurantId")*/
+      .then((review) => { 
+        console.log(review); 
+        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review });
+        //UserModel.find({ userId: req.params.id })
+      });
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+  });
+
+//ROUTES GET to update restaurant
+router.get("/:id/edit", (req, res, next) => {
+  console.log(req.params.id);
+  RestaurantModel.findById(req.params.id)
+    .then((restaurant) => {
+        res.render("restaurants/updateRestaurants.hbs", { restaurant: restaurant});
+      })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});
+
+//ROUTES POST to update restaurant
+router.post("/:id/edit", (req, res, next) => {
+  console.log(req.body);
+  console.log(req.params.id);
+  RestaurantModel.findByIdAndUpdate(req.params.id, req.body)
+      .then(() => {   
+        res.redirect("/restaurants/:id");
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});
+
+/*
+//ROUTES POST to delete restaurant
+router.get("/:id/delete", (req, res, next) => {
+ // console.log(req.params.id);
+  RestaurantModel.findByIdAndDelete(req.params.id)
+    .then(() => {   
+        res.redirect("/restaurants");
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});*/
+
 
 module.exports = router;
