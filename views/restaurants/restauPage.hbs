@@ -55,9 +55,11 @@
         {{/each}}
         {{/if}}
       </div>
+      {{#if isLoggedIn}}
       <div class="new-review-box">
         {{>reviewFormPartial}}
       </div>
+      {{/if}}
       {{#if currentUser.isAdmin}}
      {{>adminButton}}
      {{/if}}
