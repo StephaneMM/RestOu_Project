@@ -17,10 +17,12 @@
     
   <div class="container mt-5 d-flex justify-content-center">
 
-    <form class="search" action="/restaurants" method="GET">
+    <form class="search d-flex" action="/restaurants" method="GET">
         <input class="bar" type="text" placeholder="Search by department..." name="resName">
-        <button><i class="fas fa-search"></i>SEARCH</button>
-        <button><a href="/restaurants"><i class="fas fa-sync-alt"></i>REFREH</a></button>
+        <div>
+        <button class="button-search"><i class="fas fa-search"></i>SEARCH</button>
+        <a href="/restaurants"><i class="fas fa-sync-alt dark-green"></i></a>
+      </div>
     </form>
 </div>
 
