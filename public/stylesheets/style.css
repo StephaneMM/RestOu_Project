@@ -27,6 +27,10 @@ body {
 
 }
 
+main {
+  margin-top: 54px;
+}
+
 .cursor-pointer{
   cursor: pointer;
 }
@@ -36,14 +40,6 @@ body {
   width: 80vw;
   position: sticky !important;
   top: 0;
-}
-
-#map {
-  height: 50vh;
-  width: 500px;
-  position: sticky !important;
-  top: 0;
-  margin-bottom: 50px;
 }
 
 .gm-style-iw-d {
