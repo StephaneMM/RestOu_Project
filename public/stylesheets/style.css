@@ -9,7 +9,9 @@
 @import url("restaurant.css");
 @import url("footer.css");
 @import url("button.css");
+@import url("forms.css");
 @import url("banner-wish-list.css");
+
 * {
   margin: 0px;
   padding : 0px;

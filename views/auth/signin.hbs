@@ -1,14 +1,19 @@
-<form method="post" action="/auth/signin" class="form">
+<form method="post" action="/auth/signin" class="form form-container">
+    <h2 class="form-title">Welcome back! <br> <span class="beGreen">signin </span>  and pick up where you left off</h2>
     {{> flashMessage}}
 
-    <label for="email">email</label>
-    <input class="input" type="email" id="email" name="email">
-    <label for="password">password</label>
-    <input class="input" type="password" id="password" name="password"></input>
-    <button class="btn">Sign in</button>
+    <label for="email"></label>
+    <input class="input" type="email" id="email" name="email" placeholder="email">
+    <label for="password"></label>
+    <input class="input" type="password" id="password" name="password" placeholder="password"></input>
+    <button class="btn-form">Sign in</button>
+
+<p>
+    Don't have an account yet ? <br> <a href="/auth/signup"> Sign up</a> & enjoy amazing features
+</p>
 
 </form>
 
-<p>
-    Don't have an account yet ? <a href="/auth/signup">Sign up & enjoy amazing features</a>
-</p>
+
+
+
