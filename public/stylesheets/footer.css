@@ -18,7 +18,7 @@
     border: solid 1px black;
     width: 100%;
     position: fixed;
-    top: 0;
+    bottom: 0;
     background: #FAF3DD;
   }
   
@@ -28,7 +28,14 @@
   
   .footerContainer nav{
     display: flex;
+    justify-content: space-between;
   }
 
+  .footer-social-network-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:flex-end;
+    justify-content:flex-end;
+  }
   
   /* _________________________ */
