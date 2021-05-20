@@ -10,7 +10,7 @@
     {{#unless isLoggedIn}}
       <a class="link" href="/auth/signin"><i class="fas fa-user fa-1x"></i>
         signin</a>
-      <a class="link" href="/auth/signup"><button>Sign up</button></a>
+      <a class="btn" href="/auth/signup"><button>Sign up</button></a>
     {{/unless}}
     {{#if isLoggedIn}}
       {{#if currentUser.isAdmin}}
@@ -27,7 +27,7 @@
           |
           {{this.firstName}}</a>
       {{/each}}
-      <a class="btn" href="/auth/signout">Signout</a>
+      <a class="link" href="/auth/signout">Signout</a>
     {{/if}}
   </nav>
 </header>

@@ -1,6 +1,8 @@
-<div class="container mt-5">
-    <form method="post" action="/restaurants/create" class="form" enctype="multipart/form-data">
+    <form method="post" action="/restaurants/create" class="form form-container" enctype="multipart/form-data">
         <h1 class="title text-center">Create Restaurant</h1>
+
+        {{> flashMessage}}
+
         <div class="mb-3">
             <label for="name" class="form-label">name</label>
             <input class="input form-control" type="text" id="name" name="name" placeholder="Name">
@@ -72,6 +74,11 @@
 
 
 
-        <button class="btn btn-primary mb-3">Create</button>
+        <button class="btn-form">Create</button>
     </form>
-</div>
+
+
+
+
+
+    
