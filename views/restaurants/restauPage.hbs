@@ -18,15 +18,28 @@
         "https://d3h1lg3ksw6i6b.cloudfront.net/guide/placeholder/pic_poilist_default_1.jpg",
     }, }}
 
+
 <main class="restauPage-container">
+<div class="favoriteNav">
+  {{#if favorisHeart}}
+    <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
+  {{else}}
+    <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
+  {{/if}}
+</div>
 
 <div class="restauPage-unscrollable">
-    <div class="restauImg-div" width="300">
+    <div class="restauImg-div" width="300" >
       <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
     </div>
-    <div class="restau-map" width="300">
-      <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
+  <div width="300">
+    <div id="map" class="restau-map"  width="30px" data-lat={{lat}} data-lng={{lng}}></div>
     </div>
+    
+    
+
+   
+   
 </div>
 
   <div class="infos-scrollable">

@@ -104,10 +104,14 @@ router.post(
 router.get("/:id", (req, res, next) => {
   RestaurantModel.findById(req.params.id)
     .then((restaurant) => {
+
+      let favorisHeart = req.session.currentUser !== undefined ? req.session.currentUser.favoris.includes(restaurant._id.toString()) : false
+      let lat = restaurant.coordinates[0].toString()
+      let lng = restaurant.coordinates[1].toString()
       ReviewModel.find({ restaurantId: req.params.id })
       .then((review) => {
-        
-        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review })
+
+        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review, favorisHeart: favorisHeart, lat: lat, lng: lng})
       });
     })
     .catch((dbErr) => {
