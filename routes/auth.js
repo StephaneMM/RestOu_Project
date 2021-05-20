@@ -60,7 +60,8 @@ router.post("/signup", async (req, res, next) => {
         newUser.password = hashedPassword; //setting hashedpassword as the new password
         await UserModel.create(newUser); // creating a user inside de user database with encrypted password instead of the regular one
         req.flash("success", "Congrats ! You are now registered !");
-        res.redirect("/restaurants");
+        req.flash("success", "You can now log in !");
+        res.redirect("/auth/signin");
       }
     } catch (err) {
 

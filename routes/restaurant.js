@@ -100,7 +100,7 @@ router.post(
     });
   }
 );
-
+/*
 router.get("/:id", (req, res, next) => {
   RestaurantModel.findById(req.params.id)
     .then((restaurant) => {
@@ -112,11 +112,80 @@ router.get("/:id", (req, res, next) => {
       .then((review) => {
 
         res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review, favorisHeart: favorisHeart, lat: lat, lng: lng})
+
       });
     })
     .catch((dbErr) => {
       next(dbErr);
     });
 });
+*/
+
+router.get("/:id", (req, res, next) => {
+  RestaurantModel.findById(req.params.id)
+  .then((restaurant) => {
+      let favorisHeart = req.session.currentUser !== undefined ? req.session.currentUser.favoris.includes(restaurant._id.toString()) : false
+      let lat = restaurant.coordinates[0].toString()
+      let lng = restaurant.coordinates[1].toString()
+      ReviewModel.find({restaurantId: req.params.id}).populate("userId")/*.populate("restaurantId")*/
+      .then((review) => { 
+        console.log(review); 
+        res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review, favorisHeart: favorisHeart, lat: lat, lng: lng})
+
+        //UserModel.find({ userId: req.params.id })
+      });
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+  });
+
+//ROUTES GET to update restaurant
+router.get("/:id/edit", (req, res, next) => {
+  console.log(req.params.id);
+  RestaurantModel.findById(req.params.id)
+    .then((restaurant) => {
+        res.render("restaurants/updateRestaurants.hbs", { restaurant: restaurant});
+      })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});
+
+//ROUTES POST to update restaurant
+router.post("/:id/edit", (req, res, next) => {
+  console.log(req.body);
+  console.log(req.params.id);
+  RestaurantModel.findByIdAndUpdate(req.params.id, req.body)
+      .then(() => {   
+        res.redirect("/restaurants/:id");
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});
+
+
+//ROUTES POST to delete restaurant
+router.get("/:id/delete", (req, res, next) => {
+ // console.log(req.params.id);
+  RestaurantModel.findByIdAndRemove(req.params.id)
+    .then(() => {   
+        res.redirect("/restaurants");
+    })
+    .catch((dbErr) => {
+      next(dbErr);
+    });
+});
+
+/*router.get('/delete/:id', async (req, res, next) => {
+  try {
+    await RestaurantModel.findByIdAndRemove(req.params.id);
+    res.redirect('/restaurants');
+  } catch (err) {
+    next(err);
+  }
+});*/
+
 
 module.exports = router;

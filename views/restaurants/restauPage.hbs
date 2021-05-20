@@ -29,11 +29,13 @@
 </div>
 
 <div class="restauPage-unscrollable">
+
     <div class="restauImg-div" width="300" >
       <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
     </div>
   <div width="300">
     <div id="map" class="restau-map"  width="30px" data-lat={{lat}} data-lng={{lng}}></div>
+
     </div>
     
     
@@ -70,16 +72,21 @@
 
     <div class="info-section-review">
       <div class="display-review">
+        {{#if reviews}}
         <h2>Reviews</h2>
-        {{#each review.restaurantId}}
-          <p>{{this.userId}}</p>
+        {{#each reviews}}
+          <p>{{this.userId.firstName}} {{this.userId.lastName}}</p>
           <p>{{this.note}}</p>
           <p>{{this.comment}}</p>
         {{/each}}
+        {{/if}}
       </div>
       <div class="new-review-box">
-
+        {{>reviewFormPartial}}
       </div>
+      {{#if currentUser.isAdmin}}
+     {{>adminButton}}
+     {{/if}}
     </div>
   </div>
 

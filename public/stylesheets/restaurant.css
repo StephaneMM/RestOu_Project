@@ -3,20 +3,35 @@
 }
 
 .restauPage-unscrollable, .infos-scrollable {
-  width: 100% !important
+
 }
 
 .restauPage-unscrollable {
     position: fixed;
     left: 0;
+
     top: 3;
     width: 43em;
     bottom: 5;
     margin-bottom: 20px;
     overflow-y: scroll;
+
 }
 
 .infos-scrollable {
     margin-left: 50%;
     overflow: auto;
+}
+
+.restauImg-div {
+    width: 30%;
+}
+
+.img-restaurant {
+    width: 100%;
+
+}
+
+.restau-map {
+    width: 30%;
 }
