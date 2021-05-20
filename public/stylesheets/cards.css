@@ -10,6 +10,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
+  flex-wrap: wrap;
 }
   
 .card {
@@ -28,6 +29,8 @@
 
   text-shadow: 0 0 10px rgb(0 0 0 / 70%);
 }
+
+
 
   .row.artist,
 .row.album,

@@ -9,7 +9,7 @@
 @import url("restaurant.css");
 @import url("footer.css");
 @import url("button.css");
-
+@import url("banner-wish-list.css");
 * {
   margin: 0px;
   padding : 0px;
@@ -57,3 +57,32 @@ main {
 .purple-dark {
   color: #696D7D
 }
+
+.title-wish-list {
+  
+    background-color: white;
+    padding: 20px;
+
+
+}
+
+.container-wish-list{
+ 
+  margin-left: 56px;
+  margin-right: 56px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 31px;
+
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.favoris {
+  color: white;
+  font-size: 38px;
+}
+

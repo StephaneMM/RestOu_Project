@@ -1,7 +1,11 @@
-<div class="container mt-5 d-flex justify-content-center"></div>
-<h1 class="text-center purple-dark">Your wish-list 😻</h1>
-    <div class="mt-5 d-flex">
-        <div class="cards">
+
+<div class="banner-wish-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/4451315/screenshots/12271331/media/ad7f87f705c2915ed0e3c690d1d9d1d0.png?compress=1&resize=1600x1200);">
+  <div class="container">
+    <h1 class="text-center white">❤️ Your Wish-List 😋</h1>
+  </div>
+
+    <div class="d-flex container-wish-list">
+        <div class="cards flex-wrap">
             {{#each restaurants}}
                 <div class="card-restaurant card" style="background-image: url({{this.picture}}">
                     <a href="/restaurants/{{this._id}}" class="black" >
@@ -16,6 +20,10 @@
             {{/each}}
         </div>
     </div>
+
+</div>
+ 
+    
 
 
 
