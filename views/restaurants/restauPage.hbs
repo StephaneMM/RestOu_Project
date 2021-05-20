@@ -57,17 +57,21 @@
 
     <div class="info-section-review">
       <div class="display-review">
+        {{#if reviews}}
         <h2>Reviews</h2>
         {{#each reviews}}
           <p>{{this.userId.firstName}} {{this.userId.lastName}}</p>
           <p>{{this.note}}</p>
           <p>{{this.comment}}</p>
         {{/each}}
+        {{/if}}
       </div>
       <div class="new-review-box">
         {{>reviewFormPartial}}
       </div>
+      {{#if currentUser.isAdmin}}
      {{>adminButton}}
+     {{/if}}
     </div>
   </div>
 

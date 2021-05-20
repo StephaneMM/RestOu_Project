@@ -7,6 +7,6 @@ module.exports = function exposeLoginStatus(req, res, next) {
     res.locals.currentUser = req.session.currentUser;
     res.locals.isLoggedIn = true;
     res.locals.isAdmin = req.session.currentUser.role === "admin";
-  }
+}
   next();
 };

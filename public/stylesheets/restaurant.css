@@ -3,16 +3,15 @@
 }
 
 .restauPage-unscrollable, .infos-scrollable {
-  width: 100% !important
+
 }
 
 .restauPage-unscrollable {
     position: fixed;
     left: 0;
     left: 0;
-    width: 43em;
-    margin: 1em;
-    overflow-y: scroll;
+    width: 100%;
+    margin-left: 2em;
 }
 
 .infos-scrollable {

@@ -119,7 +119,7 @@ router.get("/:id", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
   RestaurantModel.findById(req.params.id)
   .then((restaurant) => {
-      ReviewModel.find().populate("userId")/*.populate("restaurantId")*/
+      ReviewModel.find({restaurantId: req.params.id}).populate("userId")/*.populate("restaurantId")*/
       .then((review) => { 
         console.log(review); 
         res.render("restaurants/restauPage.hbs", { restaurant: restaurant, reviews: review });
@@ -156,17 +156,26 @@ router.post("/:id/edit", (req, res, next) => {
     });
 });
 
-/*
+
 //ROUTES POST to delete restaurant
 router.get("/:id/delete", (req, res, next) => {
  // console.log(req.params.id);
-  RestaurantModel.findByIdAndDelete(req.params.id)
+  RestaurantModel.findByIdAndRemove(req.params.id)
     .then(() => {   
         res.redirect("/restaurants");
     })
     .catch((dbErr) => {
       next(dbErr);
     });
+});
+
+/*router.get('/delete/:id', async (req, res, next) => {
+  try {
+    await RestaurantModel.findByIdAndRemove(req.params.id);
+    res.redirect('/restaurants');
+  } catch (err) {
+    next(err);
+  }
 });*/
 
 
