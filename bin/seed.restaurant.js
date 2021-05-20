@@ -6,7 +6,7 @@ const options = {
     provider: 'google',
   
     // Optional depending on the providers
-    apiKey: "AIzaSyD9gqFfwfhr4rOmkdeEJg0APQK5HXPN42Y",
+    apiKey: "AIzaSyBklUrNxhfIUg3MHq1wFdodevfVdaIuZWM",
   
     formatter: null // 'gpx', 'string', ...
   };
