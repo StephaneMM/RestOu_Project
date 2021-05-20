@@ -1,13 +1,15 @@
 
 
-<main class="restauPage-container">
-<div class="favoriteNav">
-  {{#if favorisHeart}}
-    <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
-  {{else}}
-    <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
-  {{/if}}
-</div>
+<main class="container restauPage-container">
+{{#if isLoggedIn}}
+  <div class="favoriteNav">
+    {{#if favorisHeart}}
+      <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
+    {{else}}
+      <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
+    {{/if}}
+  </div>
+{{/if}}
 
 <div class="restauPage-unscrollable">
 

@@ -8,11 +8,13 @@
 @import url("search_bar.css");
 @import url("restaurant.css");
 @import url("footer.css");
+@import url("button.css");
 
 
 body {
   margin: 0px !important;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Varela", Helvetica, Arial, sans-serif;
+  background-color: #FAF3DD !important;
 }
 
 .cursor-pointer{
@@ -40,4 +42,12 @@ body {
 
 .restauImg-div {
   margin-bottom: 2px;
+}
+
+.dark-green {
+  color: #68B0AB
+}
+
+.purple-dark {
+  color: #696D7D
 }
