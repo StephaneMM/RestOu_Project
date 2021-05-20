@@ -12,6 +12,7 @@ const flash = require("connect-flash"); // designed to keep messages between 2 h
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var restaurantRouter = require('./routes/restaurant');
+var reviewRouter = require('./routes/review');
 var authRouter = require('./routes/auth');
 var app = express();
 
@@ -50,6 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/restaurants', restaurantRouter);
+app.use('/reviews', reviewRouter);
 app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
