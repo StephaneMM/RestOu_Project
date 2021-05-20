@@ -9,9 +9,13 @@
 .restauPage-unscrollable {
     position: fixed;
     left: 0;
-    left: 0;
-    width: 100%;
-    margin-left: 2em;
+
+    top: 3;
+    width: 43em;
+    bottom: 5;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+
 }
 
 .infos-scrollable {

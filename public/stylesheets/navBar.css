@@ -25,5 +25,14 @@
   .navContainer nav{
     display: flex;
   }
+
+  .favoriteNav {
+    
+      background: red;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+  
+  }
   
   /* _________________________ */

@@ -21,12 +21,23 @@ body {
 
 #big-map {
   height: 100vh;
-  width: 70vw;
+  width: 80vw;
   position: sticky !important;
   top: 0;
 }
 
+#map {
+  height: 50vh;
+  width: 500px;
+  position: sticky !important;
+  top: 0;
+  margin-bottom: 50px;
+}
 
 .gm-style-iw-d {
   width: 200px !important
+}
+
+.restauImg-div {
+  margin-bottom: 2px;
 }

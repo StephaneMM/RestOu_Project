@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const protectRoute = require("./../middlewares/protectRoute");
 const protectAdminRoute = require("./../middlewares/protectAdminRoute");
-const User = require("./../models/User");
+
 const UserModel = require('./../models/User');
 const RestaurantModel = require('../models/Restaurant');
 /* GET users listing. */
@@ -12,13 +12,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/wish-list', function(req, res, next) {
-  console.log(req.session)
-  if(req.session.currentUser !== undefined) {
-    console.log(req.session.currentUser.favoris)
-    console.log("WISHLIST")
-    RestaurantModel.find( { _id : { $in : req.session.currentUser.favoris } } ).then((response) => {
 
-      res.render("users/wish-list.hbs",{favoris: response})
+  if(req.session.currentUser !== undefined) {
+
+    console.log(req.session.currentUser.favoris)
+    RestaurantModel.find( { _id : { $in : req.session.currentUser.favoris } } ).then((response) => {
+      console.log(response)
+      res.render("users/wish-list.hbs",{restaurants: response})
     })
   } else {
     res.redirect('/restaurants')
@@ -27,7 +27,9 @@ router.get('/wish-list', function(req, res, next) {
 });
 
 router.post('/wish-list', function(req, res, next) {
-  User.findById(req.query.user).then((response) => {
+
+  UserModel.findById(req.session.currentUser._id).then((response) => {
+
     if(!response.favoris.includes(req.query.restaurant)) {
 
       response.favoris.push(req.query.restaurant)
@@ -39,10 +41,10 @@ router.post('/wish-list', function(req, res, next) {
 });
 
 router.patch('/wish-list-delete', function(req, res, next) {
+ 
+  const favoris = req.session.currentUser.favoris.filter(item => item !== req.query.restaurant)
 
-  const favoris = req.query.favoris.filter(item => item !== req.query.restaurant)
-
-  UserModel.findByIdAndUpdate(req.query.user, {favoris: favoris}, { new: true })
+  UserModel.findByIdAndUpdate(req.session.currentUser._id, {favoris: favoris}, { new: true })
   .then((response) => {
     console.log(response)
   }).catch((dbErr) => next(dbErr));
