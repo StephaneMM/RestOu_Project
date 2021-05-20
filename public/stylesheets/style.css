@@ -10,6 +10,7 @@
 @import url("footer.css");
 @import url("button.css");
 @import url("forms.css");
+@import url("banner-wish-list.css");
 
 * {
   margin: 0px;
@@ -28,6 +29,10 @@ body {
 
 }
 
+main {
+  margin-top: 54px;
+}
+
 .cursor-pointer{
   cursor: pointer;
 }
@@ -37,14 +42,6 @@ body {
   width: 80vw;
   position: sticky !important;
   top: 0;
-}
-
-#map {
-  height: 50vh;
-  width: 500px;
-  position: sticky !important;
-  top: 0;
-  margin-bottom: 50px;
 }
 
 .gm-style-iw-d {
@@ -61,4 +58,36 @@ body {
 
 .purple-dark {
   color: #696D7D
+}
+
+.title-wish-list {
+  
+    background-color: white;
+    padding: 20px;
+
+
+}
+
+.container-wish-list{
+ 
+  margin-left: 56px;
+  margin-right: 56px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 31px;
+
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.favoris {
+  color: white;
+  font-size: 38px;
+}
+
+.form {
+  margin-top: 400px;
 }

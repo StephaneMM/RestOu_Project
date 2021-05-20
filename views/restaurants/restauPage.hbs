@@ -1,34 +1,25 @@
 
 
 <main class="container restauPage-container">
-{{#if isLoggedIn}}
-  <div class="favoriteNav">
-    {{#if favorisHeart}}
-      <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
-    {{else}}
-      <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
-    {{/if}}
-  </div>
-{{/if}}
 
-<div class="restauPage-unscrollable">
-
-    <div class="restauImg-div" width="300" >
+  <div class="restauPage-unscrollable">
+    <div class="img-container">
       <img src="{{restaurant.picture}}" alt="{{restaurant.name}} picture" />
     </div>
-  <div width="300">
-    <div id="map" class="restau-map"  width="30px" data-lat={{lat}} data-lng={{lng}}></div>
-
+    <div id="map" class="restau-map" data-lat={{lat}} data-lng={{lng}}>
     </div>
-    
-    
-
-   
-   
-</div>
+  </div>
 
   <div class="infos-scrollable">
-
+{{#if isLoggedIn}}
+    <div class="favoriteNav">
+      {{#if favorisHeart}}
+        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
+      {{else}}
+        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
+      {{/if}}
+    </div>
+  {{/if}}
     <div class="info-section-1">
       <h1> {{restaurant.name}} </h1> <br> 
       <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
@@ -64,9 +55,11 @@
         {{/each}}
         {{/if}}
       </div>
+      {{#if isLoggedIn}}
       <div class="new-review-box">
         {{>reviewFormPartial}}
       </div>
+      {{/if}}
       {{#if currentUser.isAdmin}}
      {{>adminButton}}
      {{/if}}

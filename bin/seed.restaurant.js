@@ -6,13 +6,11 @@ const options = {
     provider: 'google',
   
     // Optional depending on the providers
-    apiKey: "AIzaSyBklUrNxhfIUg3MHq1wFdodevfVdaIuZWM",
+    apiKey: "AIzaSyDZD_C3jsri9blfWQZELrAG6KdEZBhV94Q",
   
     formatter: null // 'gpx', 'string', ...
   };
-  //apiKey: 'AIzaSyBklUrNxhfIUg3MHq1wFdodevfVdaIuZWM'
-    //apiKey: "AIzaSyD9gqFfwfhr4rOmkdeEJg0APQK5HXPN42Y",
-  
+
 const geocoder = NodeGeocoder(options);
 
 let restaurants = [
@@ -60629,7 +60627,7 @@ let restaurants = [
   ]
 
  
-  restaurants.slice(0, 200).forEach((restaurant) => {
+  restaurants.slice(0, 30).forEach((restaurant) => {
     geocoder.geocode(restaurant.address).then((response) => {
         restaurant.coordinates.push(response[0].latitude)
         restaurant.coordinates.push(response[0].longitude)

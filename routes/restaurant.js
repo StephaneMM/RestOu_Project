@@ -154,16 +154,18 @@ router.get("/:id/edit", (req, res, next) => {
 
 //ROUTES POST to update restaurant
 router.post("/:id/edit", (req, res, next) => {
-  console.log(req.body);
-  console.log(req.params.id);
+
   RestaurantModel.findByIdAndUpdate(req.params.id, req.body)
       .then(() => {   
-        res.redirect("/restaurants/:id");
+        res.redirect("/restaurants/" + req.params.id);
     })
     .catch((dbErr) => {
       next(dbErr);
     });
 });
+
+
+
 
 
 //ROUTES POST to delete restaurant
