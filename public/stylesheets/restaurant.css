@@ -1,34 +1,34 @@
 .restauPage-container {
-    height: 60%;
-}
-
-.restauPage-unscrollable, .infos-scrollable {
-    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
 .restauPage-unscrollable {
-    position: fixed;
-    left: 0;
+    height: calc(100vh - 54px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 54px;
+}
+
+.restauPage-unscrollable .img-container {
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+.restauPage-unscrollable .img-container img {
+    object-fit: cover;
     width: 100%;
-    margin-left: 2em;
-}
-
-.infos-scrollable {
-    margin-left: 50%;
-    overflow: auto;
-}
-
-.restauImg-div {
-    width: 30%;
-
-}
-
-.img-restaurant {
-    width: 100%;
-    margin-bottom: 8px;
-
+    height: 100%;
 }
 
 .restau-map {
-    width: 30%;
+    width: 100%;
+    height: 250px;
+}
+
+.infos-scrollable {
+    overflow: auto;
 }
