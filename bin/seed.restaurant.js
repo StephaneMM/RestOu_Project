@@ -60629,7 +60629,7 @@ let restaurants = [
   ]
 
  
-  restaurants.slice(0, 200).forEach((restaurant) => {
+  restaurants.slice(0, 50).forEach((restaurant) => {
     geocoder.geocode(restaurant.address).then((response) => {
         restaurant.coordinates.push(response[0].latitude)
         restaurant.coordinates.push(response[0].longitude)
