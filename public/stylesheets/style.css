@@ -9,10 +9,18 @@
 @import url("restaurant.css");
 @import url("footer.css");
 
+* {
+  margin: 0px;
+  padding : 0px;
+  box-sizing: border-box;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  
+}
 
 body {
   margin: 0px !important;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: larsseit, -apple-system, system-ui, BlinkMacSystemFont, SegoeUI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #faf3dd !important;
 }
 
 .cursor-pointer{
