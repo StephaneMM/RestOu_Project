@@ -9,6 +9,7 @@
 @import url("restaurant.css");
 @import url("footer.css");
 @import url("button.css");
+@import url("forms.css");
 
 * {
   margin: 0px;
