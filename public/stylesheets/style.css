@@ -113,3 +113,8 @@ a {
 .w-80 {
   width: 80%;
 }
+
+.margin-bottom-big {
+  margin-bottom: 4rem !important;
+
+}
