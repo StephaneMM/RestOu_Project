@@ -49,11 +49,13 @@
       {{else}}
       <p class="form-alt-option mt-3"><a href="/auth/signin">👉 Sign in </a>to add a review</p>
       {{/if}}
+         {{#if reviews}}
       <div class="box-shadow p-3">
         {{#each reviews}}
           <p class="p-2 border-bottom-dark-green">{{this.userId.firstName}} {{this.userId.lastName}} : "{{this.comment}}" (Note {{this.note}}/5)</p>
         {{/each}}
         </div>
+        {{/if}}
   
     </div>
   </div>
