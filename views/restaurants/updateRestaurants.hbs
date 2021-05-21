@@ -1,25 +1,25 @@
-<form method="post" action="/restaurants/{{restaurant._id}}/edit"  class="form form-container margin-top-big" enctype="multipart/form-data">
+<form method="post" action="/restaurants/{{restaurant._id}}/edit"  class="form form-container margin-top-big margin-bottom-big" enctype="multipart/form-data">
         <h1 class="title text-center">Update Restaurant</h1>
 
         {{> flashMessage}}
 
         <div class="mb-3">
             <label for="name" class="form-label">name</label>
-            <input class="input form-control" type="text" id="name" name="name" placeholder="Name">
+            <input class="input form-control" type="text" id="name" name="name" placeholder="Name" value="{{restaurant.name}}">
         </div>
 
         <div class="mb-3">
             <label for="address" class="form-label">address</label>
-            <input class="input form-control" type="address" id="address" name="address" placeholder="adress">
+            <input class="input form-control" type="address" id="address" name="address" placeholder="address" value="{{restaurant.address}}">
         </div>
         <div class="mb-3">
             <label for="minPrice" class="form-label">minPrice</label>
-            <input class="input form-control" type="text" id="minPrice" name="minPrice" placeholder="20">
+            <input class="input form-control" type="text" id="minPrice" name="minPrice" placeholder="20" value="{{restaurant.minPrice}}">
 
         </div>
         <div class="mb-3">
             <label for="maxPrice" class="form-label">maxPrice</label>
-            <input class="input form-control" type="text" id="maxPrice" name="maxPrice" placeholder="100">
+            <input class="input form-control" type="text" id="maxPrice" name="maxPrice" placeholder="100" value="{{restaurant.maxPrice}}">
 
         </div>
         <div class="mb-3">
@@ -29,38 +29,38 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">description</label>
-            <input class="input form-control" type="text" id="description" name="description" placeholder="Amazing">
+            <input class="input form-control" type="text" id="description" name="description" placeholder="Amazing" value="{{restaurant.description}}">
 
         </div>
         <div class="mb-3">
             <label for="stars" class="form-label">stars</label>
-            <input class="input form-control" type="text" id="stars" name="stars">
+            <input class="input form-control" type="text" id="stars" name="stars" value="{{restaurant.stars}}">
 
         </div>
         <div class="mb-3">
             <label for="standing" class="form-label">standing</label>
-            <input class="input form-control" type="text" id="standing" name="standing">
+            <input class="input form-control" type="text" id="standing" name="standing" value="{{restaurant.standing}}">
 
         </div>
         <div class="mb-3">
 
             <label for="greenTouch" class="form-label">greenTouch</label>
-            <input class="input form-control" type="text" id="greenTouch" name="greenTouch">
+            <input class="input form-control" type="text" id="greenTouch" name="greenTouch" value="{{restaurant.greenTouch}}">
         </div>
         <div class="mb-3">
             <label for="openingHours" class="form-label">openingHours</label>
-            <input class="input form-control" type="text" id="openingHours" name="openingHours">
+            <input class="input form-control" type="text" id="openingHours" name="openingHours" value="{{restaurant.openingHours}}">
 
         </div>
         <div class="mb-3">
 
             <label for="phoneNumber" class="form-label">phoneNumber</label>
-            <input class="input form-control" type="text" id="phoneNumber" name="phoneNumber" placeholder="0665587888">
+            <input class="input form-control" type="text" id="phoneNumber" name="phoneNumber" placeholder="0665587888" value="{{restaurant.phoneNumber}}">
         </div>
         <div class="mb-3">
 
             <label for="website" class="form-label">website</label>
-            <input class="input form-control" type="text" id="website" name="website" placeholder="www.resto.fr">
+            <input class="input form-control" type="text" id="website" name="website" placeholder="www.resto.fr" value="{{restaurant.website}}">
         </div>
 
         <div class="mb-3">
