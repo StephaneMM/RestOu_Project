@@ -44,10 +44,12 @@ main {
   width: 80vw;
   position: sticky !important;
   top: 0;
+  margin-right: 20px;
+  margin-bottom: 200px;
 }
 
 .gm-style-iw-d {
-  width: 200px !important
+  width: 200px !important;
 }
 
 .restauImg-div {
