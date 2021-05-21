@@ -20,38 +20,31 @@
       {{/if}}
     </div>
   {{/if}}
-    <div class="info-section-1">
-      <h1> {{restaurant.name}} </h1> <br> 
+
+      <h1> {{restaurant.name}} </h1>
+    <div class="section-container">
       <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
       <p>{{restaurant.address}}</p> <br>  
-    </div>
-
-    <div class="info-section-2">
-      <p>$$$: [{{restaurant.minPrice}} - {{restaurant.maxPrice}}]</p> <br>
+      <p>`Budget {{restaurant.minPrice}} - {{restaurant.maxPrice}} EUR`</p> <br>
       <p>{{restaurant.standing}}</p> <br>
       <p>{{restaurant.cuisineType}}</p> <br>
     </div>
 
-    <div class="info-section-description">
-      <h2>Description</h2>
+    <div class="section-container description">
+      <h3>Description</h3>
       <p>{{restaurant.description}}</p>
-    </div>
-
-    <div class="info-section-contact">
-      <h2>Eager to book a table ?</h2>
+      <h3>Eager to book a table ?</h3>
       <p>{{restaurant.website}}</p>
       <p>{{restaurant.phoneNumber}}</p>
       <p>{{restaurant.openingHours}}</p>
     </div>
 
-    <div class="info-section-review">
+    <div class="section-container">
       <div class="display-review">
         {{#if reviews}}
-        <h2>Reviews</h2>
+        <h3>Reviews</h3>
         {{#each reviews}}
-          <p>{{this.userId.firstName}} {{this.userId.lastName}}</p>
-          <p>{{this.note}}</p>
-          <p>{{this.comment}}</p>
+          <p>{{this.userId.firstName}} {{this.userId.lastName}} : "{{this.comment}}" (Note {{this.note}}/5)</p>
         {{/each}}
         {{/if}}
       </div>
