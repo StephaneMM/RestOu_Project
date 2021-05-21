@@ -152,17 +152,21 @@ router.get("/:id/edit", (req, res, next) => {
     });
 });
 
-//ROUTES POST to update restaurant
-router.post("/:id/edit", (req, res, next) => {
 
-  RestaurantModel.findByIdAndUpdate(req.params.id, req.body)
-      .then((dbSuccess) => { 
-        console.log(dbSuccess)  
-        res.redirect("/restaurants/" + req.params.id);
-    })
-    .catch((dbErr) => {
-      next(dbErr);
-    });
+
+router.post("/:id/edit", uploader.single("picture"), async (req, res, next) => {
+  console.log("HELLO")
+  try {
+    console.log(req.body)
+    const restaurantToUpdate = { ...req.body };
+    if (req.file) restaurantToUpdate.picture = req.file.path;
+
+
+    await RestaurantModel.findByIdAndUpdate(req.params.id, restaurantToUpdate);
+    res.redirect("/restaurants/" + req.params.id);
+  } catch (err) {
+    next(err);
+  }
 });
 
 
