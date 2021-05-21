@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
 .restauPage-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -31,4 +33,34 @@
 
 .infos-scrollable {
     overflow: auto;
+}
+
+h1 {
+    color: #696D7D;
+    text-align: center;
+    text-decoration: double;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: larger;
+    width: 80%;
+}
+
+h3 {
+    color: #68b0ab;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white !important;
+    box-shadow: 0px 0px 10px 0px rgba(104,176,171,1) !important;
+    /*margin: 50px 300px !important;*/
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 80%;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1rem;
+
 }
