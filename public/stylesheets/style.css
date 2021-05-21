@@ -115,6 +115,14 @@ a {
 }
 
 .margin-bottom-big {
-  margin-bottom: 4rem !important;
+  margin-bottom: 6rem !important;
 
+}
+
+.section-first-title {
+  padding: 17px;
+  background: #68B0AB;
+  border-radius: 11px;
+  color: white;
+}
 }
