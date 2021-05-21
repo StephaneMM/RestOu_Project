@@ -42,7 +42,7 @@
 }
 
 .favoriteNav {
-  background: red;
+
   display: flex;
   justify-content: flex-end;
   padding: 10px;

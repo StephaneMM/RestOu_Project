@@ -156,7 +156,8 @@ router.get("/:id/edit", (req, res, next) => {
 router.post("/:id/edit", (req, res, next) => {
 
   RestaurantModel.findByIdAndUpdate(req.params.id, req.body)
-      .then(() => {   
+      .then((dbSuccess) => { 
+        console.log(dbSuccess)  
         res.redirect("/restaurants/" + req.params.id);
     })
     .catch((dbErr) => {
