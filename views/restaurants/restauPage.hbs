@@ -19,11 +19,13 @@
       <h1 class="mt-5 mb-5"> {{restaurant.name}} </h1>
      {{/if}}
     <div class="section-container">
-      <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
-      <p>{{restaurant.address}}</p> <br>  
-      <p>`Budget {{restaurant.minPrice}} - {{restaurant.maxPrice}} EUR`</p> <br>
-      <p>{{restaurant.standing}}</p> <br>
-      <p>{{restaurant.cuisineType}}</p> <br>
+      <p class="section-first-title">⭐️ {{restaurant.stars}} MICHELIN'S STARS</p> <br>
+      <div class="box-shadow p-3">
+      <p>🏚 {{restaurant.address}}</p> <br>  
+      <p>💵`Budget {{restaurant.minPrice}} - {{restaurant.maxPrice}} EUR`</p> <br>
+      <p>👉 {{restaurant.standing}}</p> <br>
+      <p>🍗 {{restaurant.cuisineType}}</p> <br>
+      </div>
     </div>
 
     <div class="section-container description">
@@ -31,7 +33,7 @@
       <p>{{restaurant.description}}</p>
       <h3>Eager to book a table ?</h3>
       <p>{{restaurant.website}}</p>
-      <p>{{restaurant.phoneNumber}}</p>
+      <p>✆ {{restaurant.phoneNumber}}</p>
       <p>{{restaurant.openingHours}}</p>
     </div>
 
