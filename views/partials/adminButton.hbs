@@ -1,4 +1,21 @@
+<div class="d-flex w-80 justify-content-between align-center mt-5 mb-3">
+    <div class="d-flex w-100 align-items-center">
+<h1> {{restaurant.name}} </h1>
+{{#if isLoggedIn}}
+  
+      {{#if favorisHeart}}
+        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
+      {{else}}
+        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
+      {{/if}}
+   
+  {{/if}}
+  </div>
+<div class="d-flex align-items-center">
+    <a href="/restaurants/{{restaurant._id}}/edit"><i class="p-3 dark-green fas fa-edit"></i></a>
+    <a href="/restaurants/{{restaurant._id}}/delete"><i class="p-3 dark-green fas fa-trash-alt"></i></a>
 
-<a href="/restaurants/{{restaurant._id}}/edit">Edit Restaurant</a>
-<a href="/restaurants/{{restaurant._id}}/delete">Delete Restaurant</a>
 
+
+</div>
+</div>

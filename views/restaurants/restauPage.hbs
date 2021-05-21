@@ -11,17 +11,13 @@
   </div>
 
   <div class="infos-scrollable">
-{{#if isLoggedIn}}
-    <div class="favoriteNav">
-      {{#if favorisHeart}}
-        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:#C71585"></i>
-      {{else}}
-        <i class="favoris fas fa-heart cursor-pointer " data-restou={{restaurant._id}} style="color:white"></i>
-      {{/if}}
-    </div>
-  {{/if}}
 
-      <h1> {{restaurant.name}} </h1>
+
+    {{#if currentUser.isAdmin}}
+     {{>adminButton}}
+     {{else}}
+      <h1 class="mt-5 mb-5"> {{restaurant.name}} </h1>
+     {{/if}}
     <div class="section-container">
       <p>{{restaurant.stars}} MICHELIN'S STARS</p> <br>
       <p>{{restaurant.address}}</p> <br>  
@@ -42,20 +38,23 @@
     <div class="section-container">
       <div class="display-review">
         {{#if reviews}}
-        <h3>Reviews</h3>
-        {{#each reviews}}
-          <p>{{this.userId.firstName}} {{this.userId.lastName}} : "{{this.comment}}" (Note {{this.note}}/5)</p>
-        {{/each}}
+        <h3 class="text-center">Reviews</h3>
+
         {{/if}}
       </div>
       {{#if isLoggedIn}}
       <div class="new-review-box">
         {{>reviewFormPartial}}
       </div>
+      {{else}}
+      <p class="form-alt-option mt-3"><a href="/auth/signin">👉 Sign in </a>to add a review</p>
       {{/if}}
-      {{#if currentUser.isAdmin}}
-     {{>adminButton}}
-     {{/if}}
+      <div class="box-shadow p-3">
+        {{#each reviews}}
+          <p class="p-2 border-bottom-dark-green">{{this.userId.firstName}} {{this.userId.lastName}} : "{{this.comment}}" (Note {{this.note}}/5)</p>
+        {{/each}}
+        </div>
+  
     </div>
   </div>
 

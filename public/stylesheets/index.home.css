@@ -5,6 +5,9 @@ section{
 }
 
 .home{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
@@ -21,7 +24,7 @@ section{
 }
 
 .title-txt {
-    width: 400px;
+
     display: flex;
     justify-content: space-around;
     flex-direction: column;
