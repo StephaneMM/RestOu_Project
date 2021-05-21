@@ -56,3 +56,25 @@ let users = [
         __v: 0,
         }
 ]
+
+
+
+        mongoose
+        .connect("mongodb://localhost/restou", { useNewUrlParser: true })
+        .then((x) => {
+        UserModel.deleteMany()
+        UserModel.create(users)
+            .then((createdUser) => {
+              console.log(createdUser);
+              mongoose.connection.close();
+            })
+            .catch((err) => console.log(err));
+        })
+
+      
+
+
+
+
+
+  

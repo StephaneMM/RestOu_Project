@@ -4,11 +4,12 @@ console.log(favoris)
 
 if(favoris !== null) {
     favoris.addEventListener('click', (event)=> {
-        console.log(event.target.dataset.restou)
+    
         let restaurant = event.target.dataset.restou
        
         if(event.target.style.color === "white") {
             event.target.style.color = "#C71585"
+       
             axios.post(`/users/wish-list`, null, { params: {
                 restaurant: restaurant,
 

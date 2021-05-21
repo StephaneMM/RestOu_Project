@@ -21,13 +21,13 @@ router.post("/signin", async (req, res, next) => {
     const foundUser = await UserModel.findOne({ email: email});
     console.log(foundUser);
     if(!foundUser) {
-        req.flash("error", "Invalid credentials");
+        req.flash("error", "There is no user with this email");
         res.redirect("/auth/signin");
     } else {
         const isSamePassword = bcrypt.compareSync(password, foundUser.password);
 
         if(!isSamePassword) {
-            req.flash("error", "Invalid credentials");
+            req.flash("error", "Your password is incorrect");
             res.redirect("/auth/signin");
         } else {
             const userObject = foundUser.toObject();

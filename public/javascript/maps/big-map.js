@@ -3,13 +3,14 @@ let restaurants = document.querySelectorAll(".card-restaurant")
 let locations = []
 
 restaurants.forEach((restou) => {
-
+    if(restou.dataset.coordinates !== undefined && restou.dataset.name !== undefined) {
     let singleRestou = [restou.dataset.name, restou.dataset.coordinates.split(",")].flat()
    
 
 
 
     locations.push(singleRestou)
+}
 })
 
 if(document.getElementById('big-map') !== null) {
