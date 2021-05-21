@@ -3,31 +3,28 @@
     <a href="/"> REST'OÙ </a>
   </div>
   <nav>
-    <a href="/" class="link">home</a>
-    |
+    <a href="/" class="link"><i class="fa fa-home" {{!-- aria-hidden="true"--}}></i> | Home</a>
+    
     <!--<a href="/" class="link">Restaurant</a>-->
 
     {{#unless isLoggedIn}}
       <a class="link" href="/auth/signin"><i class="fas fa-user fa-1x"></i>
-        signin</a>
-      <a class="btn" href="/auth/signup"><button>Sign up</button></a>
+        Sign In</a>
+      <a class="btn" href="/auth/signup"><button><i class="fas fa-user-plus"></i> | Sign Up</button></a>
     {{/unless}}
+
     {{#if isLoggedIn}}
+
       {{#if currentUser.isAdmin}}
         <a class="link" href="/restaurants/new"><i
-            class="fas fa-plus"
-            aria-hidden="true"
-          ></i></a>
+            class="fas fa-plus fa-1x" {{!-- aria-hidden="true"--}}></i>Add</a>
       {{/if}}
 
-      <a class="link" href="/users/wish-list">|
-        <i class="fas fa-heart" aria-hidden="true"></i></a>
-      {{#each user}}
-        <a class="link" href="/user/profil"><i class="fas fa-user fa-1x"></i>
-          |
-          {{this.firstName}}</a>
-      {{/each}}
-      <a class="link" href="/auth/signout">Signout</a>
+      <a class="link" href="/users/wish-list">
+        <i class="fas fa-heart fa-1x" {{!-- aria-hidden="true"--}}></i></a> 
+        <a class="link" href="/user/profil"><i class="fas fa-user fa-1x"></i> | 
+        {{currentUser.firstName}} {{currentUser.lastName}}</a>
+      <a class="link" href="/auth/signout"><i class="fas fa-sign-out-alt fa-1x"></i> | Signout</a>
     {{/if}}
   </nav>
 </header>
