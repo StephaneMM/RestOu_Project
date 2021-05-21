@@ -1,10 +1,10 @@
 <!--send user id and restaurant idwith javascript-->
 <form id="review" method="post" action="/reviews/restaurant/{{restaurant._id}}">
-    <div class="pinfo">Give a note to the restaurant</div>
+    <div class="pinfo mt-3">Give a note to the restaurant <i class="dark-green fa fa-heart"></i></div>
         <div class="form-group">
-            <div class="col-md-4 inputGroupContainer">
+            <div class="mt-2 inputGroupContainer">
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+                    <span class="input-group-addon"></span>
                     <select class="form-control" id="rate" name="note">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -17,12 +17,14 @@
         </div>
     <div class="pinfo">Share with us your experience !</div>
         <div class="form-group">
-            <div class="col-md-4 inputGroupContainer">
+            <div class="mt-2 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                     <input class="form-control" name="comment" id="review" rows="3"></input>
                 </div>
             </div>
         </div> 
-    <button type="submit" class="btn btn-primary">Share</button>
+    <div class="w-100 d-flex justify-content-center">
+    <button type="submit" class="btn-form">Share</button>
+    </div>
 </form>

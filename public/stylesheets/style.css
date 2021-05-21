@@ -89,9 +89,27 @@ a {
 
 .favoris {
   color: white;
-  font-size: 38px;
+
 }
 
 .form {
   margin-top: 400px;
+}
+
+.border-bottom-dark-green {
+  border-bottom: 1px solid #68B0AB
+}
+
+.box-shadow {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.margin-top-big {
+
+  margin-top: 8rem !important;
+}
+
+.w-80 {
+  width: 80%;
 }
