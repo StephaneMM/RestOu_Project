@@ -19,7 +19,9 @@
   display: flex;
   justify-content: space-between;
   height: 58px;
-  bottom: 0px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   padding: 20px;
@@ -89,4 +91,13 @@
     color: white;
     text-decoration: none;
   }
+
+  .fa-pinterest .fa-instagram-square .fa-facebook{
+    color: #c8d5b9;
+    margin-right: 5px;
+  }
+
+
+
+
   /* _________________________ */
